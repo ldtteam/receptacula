@@ -1,4 +1,7 @@
-# Rancher CLI
+
+# rancher-cli (rancher-cli)
+
+Provides the Rancher CLI for managing Rancher clusters
 
 ## Example Usage
 
@@ -10,11 +13,12 @@
 
 ## Options
 
-| Options Id | Description                                      | Type   | Default Value |
-|------------|--------------------------------------------------|--------|---------------|
-| version    | Select or enter a rancher cli version to install | string | latest        |
+| Options Id | Description | Type | Default Value |
+|-----|-----|-----|-----|
+| version | Select or enter a rancher cli version to install | string | latest |
 
 
 
 ---
+
 _Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/ldtteam/receptacula/blob/main/src/rancher-cli/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
