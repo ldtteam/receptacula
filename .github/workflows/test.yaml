@@ -13,10 +13,7 @@ jobs:
     strategy:
       matrix:
         features:
-          - kubeseal
-          - kubeconform
-          - confd
-          - gomplate
+          - rancher-cli
         baseImage:
           - debian:latest
           - ubuntu:latest
