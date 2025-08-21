@@ -101,9 +101,11 @@ if [ "${RANCHER_VERSION}" != "none" ] && ! type rancher > /dev/null 2>&1; then
         echo $RANCHER_SHA256
     fi
     ([ "${RANCHER_SHA256}" = "dev-mode" ] || (echo "${RANCHER_SHA256} */tmp/${rancher_filename}" | sha256sum -c -))
-    tar -xf "/tmp/${rancher_filename}" --directory /usr/local/bin/
+    # Unpack and move the rancher binary from the intermediary folder
+    tar -xf "/tmp/${rancher_filename}" -C /tmp/
+    mv "/tmp/rancher-v${RANCHER_VERSION}/rancher" /usr/local/bin/rancher
     chmod 0755 /usr/local/bin/rancher
-    rm "/tmp/${rancher_filename}"
+    rm -rf "/tmp/${rancher_filename}" "/tmp/rancher-v${RANCHER_VERSION}"
     if ! type rancher > /dev/null 2>&1; then
         echo '(!) Rancher CLI installation failed!'
         exit 1
