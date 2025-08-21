@@ -103,7 +103,9 @@ if [ "${RANCHER_VERSION}" != "none" ] && ! type rancher > /dev/null 2>&1; then
     ([ "${RANCHER_SHA256}" = "dev-mode" ] || (echo "${RANCHER_SHA256} */tmp/${rancher_filename}" | sha256sum -c -))
     # Unpack and move the rancher binary from the intermediary folder
     tar -xf "/tmp/${rancher_filename}" -C /tmp/
+    echo "Unpacked and setting up the rancher cli tool"
     mv "/tmp/rancher-v${RANCHER_VERSION}/rancher" /usr/local/bin/rancher
+    ls /usr/local/bin
     chmod 0755 /usr/local/bin/rancher
     rm -rf "/tmp/${rancher_filename}" "/tmp/rancher-v${RANCHER_VERSION}"
     if ! type rancher > /dev/null 2>&1; then
