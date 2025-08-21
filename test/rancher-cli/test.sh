@@ -6,7 +6,7 @@ set -e
 source dev-container-features-test-lib
 
 # Definition specific tests
-check "kubeconform" kubeconform -v
+check "rancher-cli" rancher --version
 
 # Report result
 reportResults
