@@ -1,0 +1,20 @@
+{
+    "name": "rancher-cli",
+    "id": "rancher-cli",
+    "version": "1",
+    "description": "Provides the Rancher CLI for managing Rancher clusters",
+    "options": {
+        "version": {
+            "type": "string",
+            "proposals": [
+                "latest",
+                "none"
+            ],
+            "default": "latest",
+            "description": "Select or enter a rancher cli version to install"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}
