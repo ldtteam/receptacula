@@ -2,7 +2,7 @@ name: "CI - Test Features"
 on:
   push:
     branches:
-      - main
+      - version/latest
   pull_request:
   workflow_dispatch:
 
